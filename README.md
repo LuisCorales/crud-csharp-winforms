@@ -1,3 +1,3 @@
 # crud-csharp-winforms
 
-CRUD Template to reuse in new projects.
+CRUD Template built in layered arquitecture to reuse in new projects.
