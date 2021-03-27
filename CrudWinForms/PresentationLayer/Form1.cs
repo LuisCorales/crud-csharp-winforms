@@ -43,13 +43,13 @@ namespace PresentationLayer
         {
             RefreshTable();
 
-            cbSearchFilters.Items.Add("-");
             cbSearchFilters.Items.Add("ID");
-            cbSearchFilters.Items.Add("First Name");
-            cbSearchFilters.Items.Add("Last Name");
+            cbSearchFilters.Items.Add("Full Name");
             cbSearchFilters.Items.Add("Email");
             cbSearchFilters.Items.Add("Phone");
             cbSearchFilters.Items.Add("ID Document");
+
+            cbSearchFilters.SelectedItem = "ID";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -70,7 +70,12 @@ namespace PresentationLayer
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            var table = bs_Clients.SearchData(txtbSearch.Text, cbSearchFilters.SelectedItem.ToString());
 
+            if (table != null && table.Rows.Count > 0)
+                dataGridViewDBTable.DataSource = table;
+            else
+                MessageBox.Show("There are no results.");
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

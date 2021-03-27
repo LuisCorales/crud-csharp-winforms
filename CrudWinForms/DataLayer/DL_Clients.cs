@@ -125,5 +125,50 @@ namespace DataLayer
                 dbConnection.CloseConnection();
             }
         }
+
+        //Search through the DB a data that matches the id
+        public DataTable Search(string searchKeyword, string column)
+        {
+            string cmd;
+
+            column = column.ToLower();
+
+            if (column == "id document")
+            {
+                column = "idDocument";
+                cmd = "SELECT * FROM " + dbTable + " WHERE " + column + "='" + searchKeyword + "'";
+            }
+            else if (column == "full name")
+            {
+                cmd = "SELECT * FROM " + dbTable + " WHERE CONCAT(firstName, ' ', lastName) LIKE '%" + searchKeyword + "%'";
+            }
+            else
+            {
+                cmd = "SELECT * FROM " + dbTable + " WHERE " + column + "='" + searchKeyword + "'";
+            }
+
+            try
+            {
+                //Get the data in the selected DB
+                adapter = new MySqlDataAdapter(cmd, dbConnection.DBConnection);
+
+                dbConnection.OpenConnection();
+
+                //Add the data to the DataTable
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, dbTable);
+                table = ds.Tables[dbTable];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dbConnection.CloseConnection();
+            }
+
+            return table;
+        }
     }
 }

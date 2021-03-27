@@ -21,13 +21,13 @@ namespace DataLayer
         
         public MySqlConnection DBConnection => dbConnection;
 
+        //Initialize connection to the server
         public DL_Connection()
         {
             string connectionString = "database=" + db + ";datasource=" + server + ";port=" + port + ";username=" + username + ";password=" + password + "";
 
             try
             {
-                //Create a connection to the server
                 dbConnection = new MySqlConnection(connectionString);
             }
             catch (MySqlException ex)

@@ -93,8 +93,9 @@ namespace PresentationLayer
             // 
             // cbSearchFilters
             // 
+            this.cbSearchFilters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSearchFilters.FormattingEnabled = true;
-            this.cbSearchFilters.Location = new System.Drawing.Point(12, 19);
+            this.cbSearchFilters.Location = new System.Drawing.Point(12, 20);
             this.cbSearchFilters.Name = "cbSearchFilters";
             this.cbSearchFilters.Size = new System.Drawing.Size(121, 21);
             this.cbSearchFilters.TabIndex = 0;
@@ -118,7 +119,7 @@ namespace PresentationLayer
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(959, 17);
+            this.btnRefresh.Location = new System.Drawing.Point(959, 18);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 5;
@@ -332,8 +333,12 @@ namespace PresentationLayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1046, 504);
             this.Controls.Add(this.splitContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "CRUD";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

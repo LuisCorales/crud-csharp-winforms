@@ -36,5 +36,10 @@ namespace BusinessLayer
         {
             return dl_Clients.Delete(id);
         }
+
+        public DataTable SearchData(string searchKeyword, string column)
+        {
+            return dl_Clients.Search(searchKeyword, column);
+        }
     }
 }
