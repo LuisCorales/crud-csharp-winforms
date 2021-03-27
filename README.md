@@ -1,3 +1,5 @@
 # crud-csharp-winforms
 
-![Alt Text](https://github.com/LuisCorales/crud-csharp-winforms/blob/main/Preview/preview.gif)
+![](http://i.imgur.com/OUkLi.gif)
+
+![](https://github.com/LuisCorales/crud-csharp-winforms/blob/main/Preview/preview.gif)
